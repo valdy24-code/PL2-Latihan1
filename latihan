@@ -17,10 +17,31 @@
             )");
             header('location:latihan.php');
         }
+    
+    if(isset($_POST['update']))
+    {
+        $npm = $_POST['npm'];
+        $nama = $_POST['nama'];
+        $query = mysqli_query($conn, "update tbl_mahasiswa set nama='$nama' where npm='$npm'");
+            header('location:latihan.php');
+    }
+
+    if(isset($_POST['delete']))
+    {
+        $npm = $_POST['npm'];
+        $nama = $_POST['nama'];
+        $query = mysqli_query($conn, "delete from tbl_mahasiswa where npm='$npm'");
+            header('location:latihan.php');
+    }
 ?>
 
 <form action="" method="POST">
     <input type="text" name="npm">
     <input type="text" name="nama">
     <input type="submit" name="proses" value="simpan">
+    <input type="submit" name="update" value="Update">
+</form>
+<form action="" method="POST">
+    <input type="text" name="npm">
+    <input type="submit" name="delete" value="delete">
 </form>
