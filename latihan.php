@@ -9,7 +9,7 @@
        echo $data['npm'].' '.$data['nama']; echo "<br>";
    }
 
-   if(isset($_POST['proses']))
+   if(isset($_POST['insert']))
    {
         $query = mysqli_query($conn, "insert into tbl_mahasiswa values(
             '".$_POST['npm']."',
@@ -38,7 +38,7 @@
 <form action="" method="POST">
     <input type="text" name="npm">
     <input type="text" name="nama">
-    <input type="submit" name="proses" value="simpan">
+    <input type="submit" name="insert" value="simpan">
     <input type="submit" name="update" value="Update">
 </form>
 <form action="" method="POST">
